@@ -1,0 +1,14 @@
+.tab.current-tab{
+    background-color: rgb(184, 104, 30);
+    border-radius: 4px;
+}
+
+.form-container.active{
+    scale:1 ;
+    opacity: 1;
+    display: 10px;
+}
+.active {
+    display: block;
+    /* or other styles to make the element visible */
+}

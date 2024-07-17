@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="div">
+        <div class="div-2">
+            <img loading="lazy" src="images/img1.png" class="img" />
+            <div class="div-3">
+                <div class="div-4">
+                    <img loading="lazy" src="images/img2.png" class="img-2" />
+                    <img loading="lazy" src="images/img3.svg" class="img-3" />
+                </div>
+                <div class="div-5">
+                    <div class="div-6">
+                        <div class="div-7">English (United States)</div>
+                        <img loading="lazy" src="images/img4.svg" class="img-4" />
+                    </div>
+                    <div class="div-8">Sign In</div>
+                </div>
+            </div>
+            <div class="div-9">
+                <div class="div-10">Sign Up</div>
+                <div class="div-11">
+                    <div class="step active">1</div>
+                    
+                    <div class="step">2</div>
+                    
+                    <div class="step">3</div>
+                    
+                    <div class="step">4</div>
+                </div>
+                <div class="div-19">
+                    <div class="div-20">Account<br />Type</div>
+                    <div class="div-21">Basic<br />Details</div>
+                    <div class="div-22">Social Media<br />Presence</div>
+                    <div class="div-23">Create<br />Password</div>
+                </div>
+                <div class="section active" id="accountTypeSection">
+                    <div class="div-25">
+    
+                            <div class="div-26">
+                                <img loading="lazy" src="images/comapany.svg" class="img-5" />
+                                <div class="div-27">Individual Company</div>
+                            </div>
+                        
+                        
+                            <div class="div-28">
+                                <img loading="lazy" src="images/market.svg" class="img-6" />
+                                <div class="div-29">Marketing Agency</div>
+                            </div>
+                        
+                    </div>
+                    <div class="button-container">
+                        <button class="next-button" onclick="nextSection()">Next</button>
+                    </div>
+                    
+                </div>
+                <div class="section" id="basicDetailsSection">
+                    
+                    <div class="basic">
+                        <div class="b-1">
+                            <div class="upertext">Enter a first name and last name</div>
+                            <input type="text" class="inside" placeholder="Enter name" />
+                        </div>
+
+                        <div class="b-2">
+                            <div class="upertext">What's your email?</div>
+                            <input type="email" class="inside" placeholder="Enter your email address" />
+                        </div>
+
+                    </div>
+
+                    <div class="basic-2">
+                        <div class="bus">
+                             <div class="type">Enter your business type</div>
+                             <div class="divnew">
+                                <select class="in">
+                                  <option>Select business type</option>
+                                  <!-- Add options here -->
+                                </select>
+                                <img loading="lazy" src="images/img8.svg" class="img-66" />
+                              </div>
+                              
+                        </div>
+                        <div class="div-38">
+                            <div class="div-39">Your company name</div>
+                            <input type="text" class="div-40" placeholder="Enter company name" />
+                          </div>
+                    </div>
+                    <div class="div-41">
+                        <div class="div-42">
+                          <div class="div-43">Do you have any business website?</div>
+                          <div class="div-44">
+                            <div class="div-45">
+                              <img loading="lazy" src="images/img9.svg" class="img-7" />
+                              <div class="div-46">Yes, I have</div>
+                            </div>
+                            <div class="div-47">
+                              <img loading="lazy" src="images/img10.svg" class="img-8" />
+                              <div class="div-48">Nope</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="div-49">
+                          <div class="div-50">Enter company website URL</div>
+                          <input type="url" class="div-51" placeholder="Enter website URL" />
+                        </div>
+                      </div>
+                    <button class="next-button" onclick="nextSection()">Next</button>
+                </div>
+                <div class="section" id="socialMediaSection">
+                    
+                    <div class="div-49">
+                        
+                        <div class="div-50">Twitter</div>
+                        <input type="text" id="twitter" class="div-51" placeholder="Enter your Twitter handle">
+                    </div>
+                    <div class="div-49">
+                        <div class="div-50">LinkedIn</div>
+                        <input type="text" id="linkedin" class="div-51" placeholder="Enter your LinkedIn profile">
+                    </div>
+                    <button class="next-button" onclick="nextSection()">Next</button>
+                </div>
+                <div class="section" id="createPasswordSection">
+                    
+                    <div class="field">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Create a password">
+                    </div>
+                    <div class="field">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" placeholder="Confirm your password">
+                    </div>
+                    <button class="next-button" id="nextButton" onclick="submitForm()">Submit</button>
+                </div>
+                <div class="div-31">
+                    <span style="font-family: Roboto, sans-serif; color: rgba(51, 51, 51, 1);">Already have an account?</span>
+                    <span style="font-family: Roboto, sans-serif; font-weight: 500; color: rgba(63, 81, 181, 1);">Log in</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let currentSectionIndex = 0;
+        const sections = document.querySelectorAll('.section');
+        
+        const steps = document.querySelectorAll('.step');
+        
+
+        function nextSection() {
+            if (currentSectionIndex < sections.length - 1) {
+                sections[currentSectionIndex].classList.remove('active');
+                console.log(sections[currentSectionIndex])
+                steps[currentSectionIndex].classList.remove('active');
+                console.log(steps[currentSectionIndex])
+                currentSectionIndex++;
+                sections[currentSectionIndex].classList.add('active');
+                console.log(sections[currentSectionIndex])
+                steps[currentSectionIndex].classList.add('active');
+            }
+        }
+
+        function submitForm() {
+            alert("Form Submitted!");
+        }
+        if (currentSectionIndex === 1) {
+            document.querySelector('.div-10').textContent = 'Marketing Agency Sign Up';
+        } else {
+            document.querySelector('.div-10').textContent = 'Sign Up';
+        }
+
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const individualCompany = document.querySelector(".div-26");
+    const marketingAgency = document.querySelector(".div-28");
+
+    individualCompany.addEventListener("mouseover", () => {
+        individualCompany.style.opacity = "1";
+        marketingAgency.style.opacity = "0.5";
+    });
+
+    individualCompany.addEventListener("mouseout", () => {
+        individualCompany.style.opacity = "1";
+        marketingAgency.style.opacity = "1";
+    });
+
+    marketingAgency.addEventListener("mouseover", () => {
+        marketingAgency.style.opacity = "1";
+        individualCompany.style.opacity = "0.5";
+    });
+
+    marketingAgency.addEventListener("mouseout", () => {
+        marketingAgency.style.opacity = "0.5";
+        individualCompany.style.opacity = "1";
+    });
+});
+    const individualCompanyDiv = document.querySelector('.div-26');
+    const marketingAgencyDiv = document.querySelector('.div-28');
+    const signUpText = document.querySelector('.div-10');
+    let selectedOption = '';
+    individualCompanyDiv.addEventListener('click', () => {
+        selectedOption = 'Individual Company Sign Up';
+        signUpText.textContent = selectedOption;
+    });
+
+    marketingAgencyDiv.addEventListener('click', () => {
+        selectedOption = 'Marketing Agency Sign Up';
+        signUpText.textContent = selectedOption;
+    });
+    nextButton.addEventListener('click', () => {
+        // Proceed to the next step
+        if (selectedOption) {
+            console.log('Proceeding with:', selectedOption);
+            // Here you can add logic to navigate to the next step
+        } else {
+            alert('Please select an account type.');
+        }
+    });
+    </script>
+</body>
+</html>
